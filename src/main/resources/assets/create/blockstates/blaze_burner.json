@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "open=false": {
+      "model": "create:block/blaze_burner/block"
+    },
+    "open=true": {
+      "model": "create_resource_vents:block/blaze_burner/block"
+    }
+  }
+}

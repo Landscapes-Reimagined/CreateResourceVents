@@ -1,0 +1,26 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.landscapesreimagined.createresourcevents.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "CreateResourceVents.refmap.json",
+  "mixins": [
+    "BlazeBurnerBlockEntityMixin",
+    "BlazeBurnerBlockMixin",
+    "BlazeBurnerVisiualMixin",
+    "BlockEntityMixin",
+    "ChunkParserMixin",
+    "HolderOwnerAccessor",
+    "MinecraftServerMixin",
+    "ScrollingInstanceMixin"
+  ],
+  "client": [
+    "BlazeBurnerRendererMixin"
+  ],
+  "mixinextras": {
+    "minVersion": "0.5.0-rc.2"
+  },
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

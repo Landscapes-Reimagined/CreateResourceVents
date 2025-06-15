@@ -1,0 +1,13 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_nether",
+  "features": [
+    "create_resource_vents:placed_crimsite_vent",
+    "create_resource_vents:placed_asurine_vent",
+    "create_resource_vents:placed_ochrum_vent",
+    "create_resource_vents:placed_veridium_vent",
+    "create_resource_vents:placed_scoria_vent",
+    "create_resource_vents:placed_scorchia_vent"
+  ],
+  "step": "underground_decoration"
+}

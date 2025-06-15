@@ -1,0 +1,10 @@
+{
+	"parent": "block/block",
+	"loader": "forge:obj",
+	"flip_v": true,
+	"model": "create_resource_vents:models/block/blaze_burner/burner_flame-1.obj",
+  "render_type": "minecraft:cutout",
+  "textures": {
+		"0": "create_resource_vents:block/blaze_burner_flame"
+	}
+}

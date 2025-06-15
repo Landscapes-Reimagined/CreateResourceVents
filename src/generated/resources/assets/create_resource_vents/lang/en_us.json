@@ -1,0 +1,15 @@
+{
+  "block.create_resource_vents.active_asurine_vent": "Active Asurine Vent",
+  "block.create_resource_vents.active_crimsite_vent": "Active Crimsite Vent",
+  "block.create_resource_vents.active_ochrum_vent": "Active Ochrum Vent",
+  "block.create_resource_vents.active_scorchia_vent": "Active Scorchia Vent",
+  "block.create_resource_vents.active_scoria_vent": "Active Scoria Vent",
+  "block.create_resource_vents.active_veridium_vent": "Active Veridium Vent",
+  "block.create_resource_vents.dormant_asurine_vent": "Dormant Asurine Vent",
+  "block.create_resource_vents.dormant_crimsite_vent": "Dormant Crimsite Vent",
+  "block.create_resource_vents.dormant_ochrum_vent": "Dormant Ochrum Vent",
+  "block.create_resource_vents.dormant_scorchia_vent": "Dormant Scorchia Vent",
+  "block.create_resource_vents.dormant_scoria_vent": "Dormant Scoria Vent",
+  "block.create_resource_vents.dormant_veridium_vent": "Dormant Veridium Vent",
+  "itemGroup.create_resource_vents.base": "Create: Resource Vents"
+}

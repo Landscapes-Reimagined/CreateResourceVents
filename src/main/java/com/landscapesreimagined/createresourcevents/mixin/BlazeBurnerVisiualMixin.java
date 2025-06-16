@@ -11,11 +11,12 @@ import com.simibubi.create.content.processing.burner.BlazeBurnerBlockEntity;
 import com.simibubi.create.content.processing.burner.BlazeBurnerVisual;
 import com.simibubi.create.content.processing.burner.ScrollInstance;
 import dev.engine_room.flywheel.api.visualization.VisualizationContext;
+import dev.engine_room.flywheel.lib.instance.TransformedInstance;
 import dev.engine_room.flywheel.lib.model.baked.PartialModel;
+import dev.engine_room.flywheel.lib.transform.Translate;
 import dev.engine_room.flywheel.lib.visual.AbstractBlockEntityVisual;
 import dev.engine_room.flywheel.lib.visual.SimpleDynamicVisual;
 import dev.engine_room.flywheel.lib.visual.SimpleTickableVisual;
-import net.createmod.catnip.animation.LerpedFloat;
 import net.createmod.catnip.render.SpriteShiftEntry;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
@@ -102,13 +103,37 @@ public abstract class BlazeBurnerVisiualMixin extends AbstractBlockEntityVisual<
 //        return isDormantVentBlock(this.level, this.pos) && this.heatLevel.isAtLeast(BlazeBurnerBlock.HeatLevel.SEETHING) ? -original : original;
 //    }
 
-    @WrapOperation(method = "animate", at = @At(value = "INVOKE", target = "Lnet/createmod/catnip/animation/LerpedFloat;getValue(F)F"))
-    public float flipAnimate(LerpedFloat instance, float partialTicks, Operation<Float> original){
+//    @WrapOperation(method = "animate", at = @At(value = "INVOKE", target = "Lnet/createmod/catnip/animation/LerpedFloat;getValue(F)F"))
+//    public float flipAnimate(LerpedFloat instance, float partialTicks, Operation<Float> original){
+//        if(isDormantVentBlock(this.level, this.pos) && this.heatLevel.isAtLeast(BlazeBurnerBlock.HeatLevel.SEETHING)) {
+//            return original.call(instance, partialTicks) * -1;
+//        }
+//
+//        return original.call(instance, partialTicks);
+//
+//    }
+
+//    @Inject(method = "animate", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/content/processing/burner/BlazeBurnerBlockEntity;getHeatLevelForRender()Lcom/simibubi/create/content/processing/burner/BlazeBurnerBlock$HeatLevel;"), locals = LocalCapture.CAPTURE_FAILSOFT)
+//    public void flipAnimateFrThisTime(float partialTicks, CallbackInfo ci, float animation, boolean validBlockAbove){
+//        if(isDormantVentBlock(this.level, this.pos) && this.heatLevel.isAtLeast(BlazeBurnerBlock.HeatLevel.SEETHING)) {
+//            animation *= -1;
+//        }
+//    }
+
+    @WrapOperation(
+            method = "animate",
+            at = {
+                    @At(value = "INVOKE", target = "Ldev/engine_room/flywheel/lib/instance/TransformedInstance;translateY(F)Ldev/engine_room/flywheel/lib/transform/Translate;", ordinal = 0),
+                    @At(value = "INVOKE", target = "Ldev/engine_room/flywheel/lib/instance/TransformedInstance;translateY(F)Ldev/engine_room/flywheel/lib/transform/Translate;", ordinal = 1),
+                    @At(value = "INVOKE", target = "Ldev/engine_room/flywheel/lib/instance/TransformedInstance;translateY(F)Ldev/engine_room/flywheel/lib/transform/Translate;", ordinal = 2)
+            })
+    public Translate flipAnimateOneLastTimeOMGGG(TransformedInstance instance, float v, Operation<Translate> original){
         if(isDormantVentBlock(this.level, this.pos) && this.heatLevel.isAtLeast(BlazeBurnerBlock.HeatLevel.SEETHING)) {
-            return original.call(instance, partialTicks) * -1;
+            return original.call(instance, -v);
+        }else{
+            return original.call(instance, v);
         }
 
-        return original.call(instance, partialTicks);
-
     }
+
 }

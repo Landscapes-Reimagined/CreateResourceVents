@@ -29,7 +29,7 @@ import org.spongepowered.asm.mixin.injection.At;
 
 import static com.landscapesreimagined.createresourcevents.Blocks.DynamicRegistry.isDormantVentBlock;
 
-@Mixin(value = BlazeBurnerBlock.class, remap = false)
+@Mixin(value = BlazeBurnerBlock.class)
 public abstract class BlazeBurnerBlockMixin extends HorizontalDirectionalBlock implements IBE<BlazeBurnerBlockEntity>, IWrenchable {
 
     private static BooleanProperty OPEN = BlockStateProperties.OPEN;
@@ -49,8 +49,7 @@ public abstract class BlazeBurnerBlockMixin extends HorizontalDirectionalBlock i
             at = @At(
                     value = "INVOKE",
                     target = "Lcom/simibubi/create/content/processing/burner/BlazeBurnerBlock;defaultBlockState()Lnet/minecraft/world/level/block/state/BlockState;"
-            ),
-            remap = false)
+            ))
     public BlockState wrapDefaultBlockState(BlazeBurnerBlock instance, Operation<BlockState> original){
 
         return original.call(instance).setValue(OPEN, false);

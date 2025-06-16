@@ -24,7 +24,7 @@ import java.util.stream.Collector;
 @Mixin(ChunkSerializer.class)
 public class ChunkParserMixin {
 
-    @WrapOperation(method = "read", at = @At(value = "INVOKE", target = "Lcom/mojang/serialization/Codec;parse(Lcom/mojang/serialization/DynamicOps;Ljava/lang/Object;)Lcom/mojang/serialization/DataResult;", ordinal = 0))
+   @WrapOperation(method = "read", at = @At(value = "INVOKE", target = "Lcom/mojang/serialization/Codec;parse(Lcom/mojang/serialization/DynamicOps;Ljava/lang/Object;)Lcom/mojang/serialization/DataResult;", ordinal = 0))
     private static DataResult<BlockState> redirectParse(Codec instance, DynamicOps dynamicOps, Object o, Operation<DataResult> original){
 
         if(o instanceof CompoundTag tag){

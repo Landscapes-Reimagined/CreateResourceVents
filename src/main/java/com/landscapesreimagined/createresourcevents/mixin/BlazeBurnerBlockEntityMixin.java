@@ -99,7 +99,7 @@ public abstract class BlazeBurnerBlockEntityMixin extends SmartBlockEntity imple
         }
     }
 
-    @Inject(method = "spawnParticles", cancellable = true, at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;getRandom()Lnet/minecraft/util/RandomSource;"))
+    @Inject(method = "spawnParticles", cancellable = true, at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;getRandom()Lnet/minecraft/util/RandomSource;"), remap = true)
     public void noSpawnParticlesIfConverting(BlazeBurnerBlock.HeatLevel heatLevel, double burstMult, CallbackInfo ci){
         if(heatLevel.isAtLeast(BlazeBurnerBlock.HeatLevel.SEETHING) &&
                 isDormantVentBlock(this.getLevel(), this.getBlockPos()) &&
@@ -108,7 +108,7 @@ public abstract class BlazeBurnerBlockEntityMixin extends SmartBlockEntity imple
         }
     }
 
-    @WrapOperation(method = "spawnParticles", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;addParticle(Lnet/minecraft/core/particles/ParticleOptions;DDDDDD)V", ordinal = 0))
+    @WrapOperation(method = "spawnParticles", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;addParticle(Lnet/minecraft/core/particles/ParticleOptions;DDDDDD)V", ordinal = 0), remap = true)
     public void dontSpawnSmokeParticles(Level instance, ParticleOptions pParticleData, double pX, double pY, double pZ, double pXSpeed, double pYSpeed, double pZSpeed, Operation<Void> original){
         if(!this.getHeatLevelFromBlock().isAtLeast(BlazeBurnerBlock.HeatLevel.SEETHING)){
             original.call(instance, pParticleData, pX, pY, pZ, pXSpeed, pYSpeed, pZSpeed);

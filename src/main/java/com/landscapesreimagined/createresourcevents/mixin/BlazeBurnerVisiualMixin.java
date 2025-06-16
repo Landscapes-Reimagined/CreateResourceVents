@@ -1,15 +1,10 @@
 package com.landscapesreimagined.createresourcevents.mixin;
 
-import com.landscapesreimagined.createresourcevents.MixinStuff.FlippingTrackingInstance;
 import com.landscapesreimagined.createresourcevents.MixinStuff.VentTransformingBE;
 import com.landscapesreimagined.createresourcevents.PartialModels;
 import com.landscapesreimagined.createresourcevents.SpriteShifts;
-import com.llamalad7.mixinextras.expression.Definition;
-import com.llamalad7.mixinextras.expression.Expression;
-import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
-import com.llamalad7.mixinextras.sugar.Local;
 import com.simibubi.create.AllSpriteShifts;
 import com.simibubi.create.content.processing.burner.BlazeBurnerBlock;
 import com.simibubi.create.content.processing.burner.BlazeBurnerBlockEntity;
@@ -20,13 +15,11 @@ import dev.engine_room.flywheel.lib.model.baked.PartialModel;
 import dev.engine_room.flywheel.lib.visual.AbstractBlockEntityVisual;
 import dev.engine_room.flywheel.lib.visual.SimpleDynamicVisual;
 import dev.engine_room.flywheel.lib.visual.SimpleTickableVisual;
-import net.createmod.catnip.animation.AnimationTickHolder;
+import net.createmod.catnip.animation.LerpedFloat;
 import net.createmod.catnip.render.SpriteShiftEntry;
-import net.minecraft.util.Mth;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -76,11 +69,19 @@ public abstract class BlazeBurnerVisiualMixin extends AbstractBlockEntityVisual<
     }
 
 
-    @Definition(id = "speed", local = @Local(type = float.class, ordinal = 2))
-    @Expression("speed")
-    @ModifyExpressionValue(method = "setupFlameInstance", at = @At("MIXINEXTRAS:EXPRESSION"))
-    public float modifyAnimationSpeed(float original){
-        return hasBlockUnder && this.heatLevel.isAtLeast(BlazeBurnerBlock.HeatLevel.SEETHING) ? -original : original;
+//    @Definition(id = "speed", local = @Local(type = float.class, ordinal = 2))
+//    @Expression("speed")
+//    @ModifyExpressionValue(method = "setupFlameInstance", at = @At("MIXINEXTRAS:EXPRESSION"))
+//    public float modifyAnimationSpeed(float original){
+//        return hasBlockUnder && this.heatLevel.isAtLeast(BlazeBurnerBlock.HeatLevel.SEETHING) ? -original : original;
+//    }
+
+    @Inject(method = "animate", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/content/processing/burner/BlazeBurnerVisual;setupFlameInstance()V", shift = At.Shift.AFTER))
+    public void modifyAnimationSpeed(float partialTicks, CallbackInfo ci){
+        if(hasBlockUnder && this.heatLevel.isAtLeast(BlazeBurnerBlock.HeatLevel.SEETHING) && this.flame != null){
+            this.flame.speedU = -this.flame.speedU;
+            this.flame.speedV = -this.flame.speedV;
+        }
     }
 
 
@@ -94,12 +95,20 @@ public abstract class BlazeBurnerVisiualMixin extends AbstractBlockEntityVisual<
         return hasBlockUnder ? SpriteShifts.SUPER_BURNER_FLAME : AllSpriteShifts.SUPER_BURNER_FLAME;
     }
 
-    @Definition(id = "animation", local = @Local(type = float.class, ordinal = 1))
-    @Expression("animation * .75")
-    @ModifyExpressionValue(method = "animate", at = @At(value = "MIXINEXTRAS:EXPRESSION"))
-    public float wrapAnimationMul(float original){
-        return isDormantVentBlock(this.level, this.pos) && this.heatLevel.isAtLeast(BlazeBurnerBlock.HeatLevel.SEETHING) ? -original : original;
+//    @Definition(id = "animation", local = @Local(type = float.class, ordinal = 1))
+//    @Expression("animation * .75")
+//    @ModifyExpressionValue(method = "animate", at = @At(value = "MIXINEXTRAS:EXPRESSION"))
+//    public float wrapAnimationMul(float original){
+//        return isDormantVentBlock(this.level, this.pos) && this.heatLevel.isAtLeast(BlazeBurnerBlock.HeatLevel.SEETHING) ? -original : original;
+//    }
+
+    @WrapOperation(method = "animate", at = @At(value = "INVOKE", target = "Lnet/createmod/catnip/animation/LerpedFloat;getValue(F)F"))
+    public float flipAnimate(LerpedFloat instance, float partialTicks, Operation<Float> original){
+        if(isDormantVentBlock(this.level, this.pos) && this.heatLevel.isAtLeast(BlazeBurnerBlock.HeatLevel.SEETHING)) {
+            return original.call(instance, partialTicks) * -1;
+        }
+
+        return original.call(instance, partialTicks);
+
     }
-
-
 }

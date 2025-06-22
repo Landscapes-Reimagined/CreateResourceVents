@@ -29,6 +29,8 @@ import java.nio.file.Path;
 public class CreateResourceVents {
 
     //todo: allow null biome tag
+    //todo: futher testing of the biome switch
+    //todo: test Create: copycat+ copycats
     //todo: JEI integration
     //todo: finish last ponder
 

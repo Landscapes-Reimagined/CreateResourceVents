@@ -28,7 +28,9 @@ import java.nio.file.Path;
 @Mod(CreateResourceVents.MODID)
 public class CreateResourceVents {
 
-    //todo: ponder
+    //todo: allow null biome tag
+    //todo: JEI integration
+    //todo: finish last ponder
 
     // Define mod id in a common place for everything to reference
     public static final String MODID = "create_resource_vents";

@@ -6,6 +6,7 @@ import com.landscapesreimagined.createresourcevents.CreateResourceVents;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
@@ -22,11 +23,17 @@ public class DynamicRegistry {
     public static HashMap<BlockEntry<DormantVentBlock>, BlockEntry<ActiveResourceVentBlock>>
             DORMANT_ACTIVE_MAP = new HashMap<>();
 
+    public static HashMap<ResourceLocation, BlockEntry<ActiveResourceVentBlock>> ACTIVE_MAP = new HashMap<>();
+
     public static boolean isDormantVentBlock(Level level, BlockPos pos) {
 
         if(level == null) return false;
 
         return ForgeRegistries.BLOCKS.getKey(level.getBlockState(pos.below()).getBlock()).toString().contains("vents:dormant");
+    }
+
+    public static BlockEntry<ActiveResourceVentBlock> getActiveVent(String ventName){
+        return ACTIVE_MAP.get(CreateResourceVents.asResource(ventName));
     }
 
 //    public static ArrayList<ItemEntry<BlockItem>> BLOCK_ITEMS = new ArrayList<>();
@@ -66,6 +73,7 @@ public class DynamicRegistry {
                     .register();
 
             DORMANT_ACTIVE_MAP.put(dormantVentEntry, activeVentEntry);
+            ACTIVE_MAP.put(CreateResourceVents.asResource(holder.ventName), activeVentEntry);
 
 
 

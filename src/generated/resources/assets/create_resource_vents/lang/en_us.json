@@ -11,5 +11,21 @@
   "block.create_resource_vents.dormant_scorchia_vent": "Dormant Scorchia Vent",
   "block.create_resource_vents.dormant_scoria_vent": "Dormant Scoria Vent",
   "block.create_resource_vents.dormant_veridium_vent": "Dormant Veridium Vent",
-  "itemGroup.create_resource_vents.base": "Create: Resource Vents"
+  "itemGroup.create_resource_vents.base": "Create: Resource Vents",
+
+  "create_resource_vents.ponder.tag.resource_vents_ponders": "Resource Vents Ponders",
+  "create_resource_vents.ponder.tag.resource_vents_ponders.description": "All of the custom and default Resource Vents and their ponders",
+
+  "create_resource_vents.ponder.activate_vent.header": "Activating Resource Vents",
+  "create_resource_vents.ponder.activate_vent.text_1": "This is a Dormant Resource Vent. To generate blocks with the Vent, you must activate it.",
+  "create_resource_vents.ponder.activate_vent.text_2": "To activate the Dormant Vent, place a blaze burner above it",
+  "create_resource_vents.ponder.activate_vent.text_3": "Then, fuel the Blaze Burner with a Blaze Cake or any other fuel that Superheats the blaze burner.",
+  "create_resource_vents.ponder.activate_vent.text_4": "After 10 seconds the Dormant Vent will convert into an Active Resource Vent.",
+  "create_resource_vents.ponder.automate_vent.header": "Automating Resource Vents",
+  "create_resource_vents.ponder.automate_vent.text_1": "This is an Active Resource Vent.",
+  "create_resource_vents.ponder.automate_vent.text_2": "To automate a resource stone with a Resource Vent, supply the vent with it's corresponding in-world reactant block.",
+  "create_resource_vents.ponder.automate_vent.text_3": "This is a Lava source block by default."
+
+
+
 }

@@ -32,7 +32,6 @@ public class CreateResourceVents {
     //todo: futher testing of the biome switch
     //todo: test Create: copycat+ copycats
     //todo: JEI integration
-    //todo: finish last ponder
 
     // Define mod id in a common place for everything to reference
     public static final String MODID = "create_resource_vents";

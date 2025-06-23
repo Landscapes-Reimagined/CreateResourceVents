@@ -144,6 +144,13 @@ repositories {
     maven { url = "https://maven.tterrag.com" } // Registrate
     maven { url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/" } // ForgeConfigAPIPort
 
+    //JEI
+    maven {
+        // location of the maven that hosts JEI files since January 2023
+        name = "Jared's maven"
+        url = "https://maven.blamejared.com/"
+    }
+
 
     // If you have mod jar dependencies in ./libs, you can declare them as a repository like so.
     // See https://docs.gradle.org/current/userguide/declaring_repositories.html#sub:flat_dir_resolver
@@ -186,6 +193,13 @@ dependencies {
     }
 
     implementation fg.deobf("curse.maven:create-molten-vents-824654:5980547")
+
+    implementation fg.deobf("curse.maven:copycats-968398:6650089")
+
+    // compile against the JEI API but do not include it at runtime
+//    compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}"))
+    // at runtime, use the full JEI jar for Forge
+    implementation(fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}"))
 
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'

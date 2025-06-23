@@ -28,9 +28,10 @@ import java.nio.file.Path;
 @Mod(CreateResourceVents.MODID)
 public class CreateResourceVents {
 
-    //todo: allow null biome tag
+    //leaving this one here because I still don't really trust it?
     //todo: futher testing of the biome switch
-    //todo: test Create: copycat+ copycats
+
+
     //todo: JEI integration
 
     // Define mod id in a common place for everything to reference

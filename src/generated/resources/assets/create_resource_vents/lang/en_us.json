@@ -24,7 +24,8 @@
   "create_resource_vents.ponder.automate_vent.header": "Automating Resource Vents",
   "create_resource_vents.ponder.automate_vent.text_1": "This is an Active Resource Vent.",
   "create_resource_vents.ponder.automate_vent.text_2": "To automate a resource stone with a Resource Vent, supply the vent with it's corresponding in-world reactant block.",
-  "create_resource_vents.ponder.automate_vent.text_3": "This is a Lava source block by default."
+  "create_resource_vents.ponder.automate_vent.text_3": "This is a Lava source block by default.",
+  "create_resource_vents.jei.conversion_category_title": "Resource Vent Automation"
 
 
 

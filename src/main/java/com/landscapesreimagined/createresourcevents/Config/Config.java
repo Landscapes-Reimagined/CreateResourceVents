@@ -10,18 +10,24 @@ import com.simibubi.create.Create;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.fml.common.Mod;
+import org.checkerframework.checker.units.qual.A;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 
 import java.io.*;
 import java.lang.reflect.Type;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.List;
 
 // An example config class. This is not required, but it's a good idea to have one to keep your config organized.
 // Demonstrates how to use Forge's config APIs
 @Mod.EventBusSubscriber(modid = CreateResourceVents.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class Config
 {
+
+    public ArrayList<ConfigReloadListener> reloadListeners = new ArrayList<>();
 
     public static ConfigSerializer SERIALIZATION = new ConfigSerializer();
 
@@ -68,9 +74,32 @@ public class Config
             ventBlock.get().reload(newConfig);
         }
 
+        if(INSTANCE != null) {
+            for (ConfigReloadListener listener : INSTANCE.reloadListeners) {
+                listener.reloadConfig(newConfig);
+                newConfig.reloadListeners.add(listener);
+            }
+            INSTANCE.reloadListeners.clear();
+        }
+
         INSTANCE = newConfig;
 
 
+    }
+
+    @FunctionalInterface
+    public interface ConfigReloadListener{
+        void reloadConfig(Config newConfig);
+    }
+
+    @NotNull
+    public ResourceVentHolder getVent(String ventName){
+        for(ResourceVentHolder h : this.vents){
+            if(h.ventName.equals(ventName)){
+                return h;
+            }
+        }
+        return this.vents.stream().findFirst().get();
     }
 
 

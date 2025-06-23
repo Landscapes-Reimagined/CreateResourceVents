@@ -25,7 +25,7 @@ public class BiomePredicatePlacementModifier extends PlacementModifier {
             (instance) -> {
                 return instance.group(ResourceLocation.CODEC.listOf().optionalFieldOf("biome", Collections.emptyList()).forGetter((vars) ->{
                     return vars.predicate;
-                }), ResourceLocation.CODEC.optionalFieldOf("biomeTag", null).forGetter((vars) -> {
+                }), ResourceLocation.CODEC.optionalFieldOf("biomeTag", ResourceLocation.parse("create_resource_vents:none")).forGetter((vars) -> {
                     return vars.tag;
                 }), PlacementModifier.CODEC.listOf().optionalFieldOf("true", Collections.emptyList()).forGetter((vars) -> {
                     return vars.valIfPredExists;

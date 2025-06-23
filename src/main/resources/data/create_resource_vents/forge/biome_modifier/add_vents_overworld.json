@@ -7,8 +7,7 @@
     "create_resource_vents:placed_ochrum_vent",
     "create_resource_vents:placed_veridium_vent",
     "create_resource_vents:placed_scoria_vent",
-    "create_resource_vents:placed_scorchia_vent",
-    "create_resource_vents:test_copycats_switch_vent_placement"
+    "create_resource_vents:placed_scorchia_vent"
   ],
   "step": "underground_decoration"
 }

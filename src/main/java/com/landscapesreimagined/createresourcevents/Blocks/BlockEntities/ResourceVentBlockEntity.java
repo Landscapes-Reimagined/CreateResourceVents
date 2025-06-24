@@ -67,7 +67,7 @@ public class ResourceVentBlockEntity extends TickingBlockEntity {
 
         //convert fluid to block
         //todo: enumerate the different behaviours for setting block states from the list
-        if(!this.level.isClientSide) {
+        if(!this.level.isClientSide && generationStates.get(0) != null) {
             level.setBlock(offset, generationStates.get(0), Block.UPDATE_ALL);
             level.playSound(null, offset,
                     SoundEvents.LAVA_EXTINGUISH, SoundSource.BLOCKS,

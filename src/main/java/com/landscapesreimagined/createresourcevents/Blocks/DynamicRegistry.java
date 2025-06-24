@@ -64,6 +64,7 @@ public class DynamicRegistry {
                     .block("dormant_" + holder.ventName + "_vent",
                             (callback) -> new DormantVentBlock(
                                     BlockBehaviour.Properties.copy(Blocks.TUFF)
+                                            .explosionResistance(1200)
                                             .sound(SoundType.TUFF),
                                     activeVentEntry
                             )

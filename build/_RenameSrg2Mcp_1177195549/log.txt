@@ -1,0 +1,15 @@
+Java Launcher: C:\Users\Owner\.jabba\jdk\temurin@17.0.17\bin\java.exe
+Arguments: '--task, SRG_TO_MCP, --input, C:\Users\Owner\.gradle\caches\modules-2\files-2.1\curse.maven\create-molten-vents-824654\5980547\e8940356f4f8f4ad451acd2de361536c1eaed93c\create-molten-vents-824654-5980547.jar, --output, C:\Users\Owner\.gradle\caches\forge_gradle\deobf_dependencies\curse\maven\create-molten-vents-824654\5980547_mapped_parchment_2023.09.03-1.20.1\create-molten-vents-824654-5980547_mapped_parchment_2023.09.03-1.20.1.jar, --mcp, C:\Users\Owner\.gradle\caches\parchmentgradle\org\parchmentmc\data\parchment-1.20.1\2023.09.03\parchment-1.20.1-2023.09.03.zip, --strip-signatures'
+Classpath:
+ - C:\Users\Owner\.gradle\caches\forge_gradle\maven_downloader\net\minecraftforge\installertools\1.4.4\installertools-1.4.4-fatjar.jar
+Working directory: C:\Users\Owner\Documents\GitHub\CreateResourceVents\build\_RenameSrg2Mcp_1177195549
+Main class: net.minecraftforge.installertools.ConsoleTool
+====================================
+Task: SRG_TO_MCP
+Input:  C:\Users\Owner\.gradle\caches\modules-2\files-2.1\curse.maven\create-molten-vents-824654\5980547\e8940356f4f8f4ad451acd2de361536c1eaed93c\create-molten-vents-824654-5980547.jar
+Output: C:\Users\Owner\.gradle\caches\forge_gradle\deobf_dependencies\curse\maven\create-molten-vents-824654\5980547_mapped_parchment_2023.09.03-1.20.1\create-molten-vents-824654-5980547_mapped_parchment_2023.09.03-1.20.1.jar
+MCP:    C:\Users\Owner\.gradle\caches\parchmentgradle\org\parchmentmc\data\parchment-1.20.1\2023.09.03\parchment-1.20.1-2023.09.03.zip
+Loading MCP Data
+Processing ZIP file
+Stripped Manifest of sha digests
+Process complete

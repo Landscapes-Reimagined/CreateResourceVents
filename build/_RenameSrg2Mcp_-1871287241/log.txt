@@ -1,0 +1,15 @@
+Java Launcher: C:\Users\Owner\.jabba\jdk\temurin@17.0.17\bin\java.exe
+Arguments: '--task, SRG_TO_MCP, --input, C:\Users\Owner\.gradle\caches\modules-2\files-2.1\curse.maven\copycats-968398\6650089\b520234ee3194ada89bbfa0336e3abee11d711e7\copycats-968398-6650089.jar, --output, C:\Users\Owner\.gradle\caches\forge_gradle\deobf_dependencies\curse\maven\copycats-968398\6650089_mapped_parchment_2023.09.03-1.20.1\copycats-968398-6650089_mapped_parchment_2023.09.03-1.20.1.jar, --mcp, C:\Users\Owner\.gradle\caches\parchmentgradle\org\parchmentmc\data\parchment-1.20.1\2023.09.03\parchment-1.20.1-2023.09.03.zip, --strip-signatures'
+Classpath:
+ - C:\Users\Owner\.gradle\caches\forge_gradle\maven_downloader\net\minecraftforge\installertools\1.4.4\installertools-1.4.4-fatjar.jar
+Working directory: C:\Users\Owner\Documents\GitHub\CreateResourceVents\build\_RenameSrg2Mcp_-1871287241
+Main class: net.minecraftforge.installertools.ConsoleTool
+====================================
+Task: SRG_TO_MCP
+Input:  C:\Users\Owner\.gradle\caches\modules-2\files-2.1\curse.maven\copycats-968398\6650089\b520234ee3194ada89bbfa0336e3abee11d711e7\copycats-968398-6650089.jar
+Output: C:\Users\Owner\.gradle\caches\forge_gradle\deobf_dependencies\curse\maven\copycats-968398\6650089_mapped_parchment_2023.09.03-1.20.1\copycats-968398-6650089_mapped_parchment_2023.09.03-1.20.1.jar
+MCP:    C:\Users\Owner\.gradle\caches\parchmentgradle\org\parchmentmc\data\parchment-1.20.1\2023.09.03\parchment-1.20.1-2023.09.03.zip
+Loading MCP Data
+Processing ZIP file
+Stripped Manifest of sha digests
+Process complete

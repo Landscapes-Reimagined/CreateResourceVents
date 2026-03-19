@@ -1,0 +1,52 @@
+{
+  "mappings": {
+    "com/landscapesreimagined/createresourcevents/mixin/BlazeBurnerBlockEntityMixin": {
+      "Lnet/minecraft/world/level/Level;getRandom()Lnet/minecraft/util/RandomSource;": "Lnet/minecraft/world/level/Level;m_213780_()Lnet/minecraft/util/RandomSource;",
+      "Lnet/minecraft/world/level/Level;addParticle(Lnet/minecraft/core/particles/ParticleOptions;DDDDDD)V": "Lnet/minecraft/world/level/Level;m_7106_(Lnet/minecraft/core/particles/ParticleOptions;DDDDDD)V"
+    },
+    "com/landscapesreimagined/createresourcevents/mixin/HolderOwnerAccessor": {
+      "owner": "f_61112_:Ljava/lang/Object;"
+    },
+    "com/landscapesreimagined/createresourcevents/mixin/ChunkParserMixin": {
+      "read": "Lnet/minecraft/world/level/chunk/storage/ChunkSerializer;m_188230_(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/ai/village/poi/PoiManager;Lnet/minecraft/world/level/ChunkPos;Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/world/level/chunk/ProtoChunk;"
+    },
+    "com/landscapesreimagined/createresourcevents/mixin/BlockEntityMixin": {
+      "loadStatic": "Lnet/minecraft/world/level/block/entity/BlockEntity;m_155241_(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/world/level/block/entity/BlockEntity;"
+    },
+    "com/landscapesreimagined/createresourcevents/mixin/MinecraftServerMixin": {
+      "reloadResources": "Lnet/minecraft/server/MinecraftServer;m_129861_(Ljava/util/Collection;)Ljava/util/concurrent/CompletableFuture;"
+    },
+    "com/landscapesreimagined/createresourcevents/mixin/BlazeBurnerBlockMixin": {
+      "Lcom/simibubi/create/content/processing/burner/BlazeBurnerBlock;defaultBlockState()Lnet/minecraft/world/level/block/state/BlockState;": "Lcom/simibubi/create/content/processing/burner/BlazeBurnerBlock;m_49966_()Lnet/minecraft/world/level/block/state/BlockState;",
+      "getStateForPlacement": "Lcom/simibubi/create/content/processing/burner/BlazeBurnerBlock;m_5573_(Lnet/minecraft/world/item/context/BlockPlaceContext;)Lnet/minecraft/world/level/block/state/BlockState;",
+      "createBlockStateDefinition": "Lcom/simibubi/create/content/processing/burner/BlazeBurnerBlock;m_7926_(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V",
+      "Lnet/minecraft/world/level/block/state/StateDefinition$Builder;add([Lnet/minecraft/world/level/block/state/properties/Property;)Lnet/minecraft/world/level/block/state/StateDefinition$Builder;": "Lnet/minecraft/world/level/block/state/StateDefinition$Builder;m_61104_([Lnet/minecraft/world/level/block/state/properties/Property;)Lnet/minecraft/world/level/block/state/StateDefinition$Builder;"
+    }
+  },
+  "data": {
+    "searge": {
+      "com/landscapesreimagined/createresourcevents/mixin/BlazeBurnerBlockEntityMixin": {
+        "Lnet/minecraft/world/level/Level;getRandom()Lnet/minecraft/util/RandomSource;": "Lnet/minecraft/world/level/Level;m_213780_()Lnet/minecraft/util/RandomSource;",
+        "Lnet/minecraft/world/level/Level;addParticle(Lnet/minecraft/core/particles/ParticleOptions;DDDDDD)V": "Lnet/minecraft/world/level/Level;m_7106_(Lnet/minecraft/core/particles/ParticleOptions;DDDDDD)V"
+      },
+      "com/landscapesreimagined/createresourcevents/mixin/HolderOwnerAccessor": {
+        "owner": "f_61112_:Ljava/lang/Object;"
+      },
+      "com/landscapesreimagined/createresourcevents/mixin/ChunkParserMixin": {
+        "read": "Lnet/minecraft/world/level/chunk/storage/ChunkSerializer;m_188230_(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/ai/village/poi/PoiManager;Lnet/minecraft/world/level/ChunkPos;Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/world/level/chunk/ProtoChunk;"
+      },
+      "com/landscapesreimagined/createresourcevents/mixin/BlockEntityMixin": {
+        "loadStatic": "Lnet/minecraft/world/level/block/entity/BlockEntity;m_155241_(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/world/level/block/entity/BlockEntity;"
+      },
+      "com/landscapesreimagined/createresourcevents/mixin/MinecraftServerMixin": {
+        "reloadResources": "Lnet/minecraft/server/MinecraftServer;m_129861_(Ljava/util/Collection;)Ljava/util/concurrent/CompletableFuture;"
+      },
+      "com/landscapesreimagined/createresourcevents/mixin/BlazeBurnerBlockMixin": {
+        "Lcom/simibubi/create/content/processing/burner/BlazeBurnerBlock;defaultBlockState()Lnet/minecraft/world/level/block/state/BlockState;": "Lcom/simibubi/create/content/processing/burner/BlazeBurnerBlock;m_49966_()Lnet/minecraft/world/level/block/state/BlockState;",
+        "getStateForPlacement": "Lcom/simibubi/create/content/processing/burner/BlazeBurnerBlock;m_5573_(Lnet/minecraft/world/item/context/BlockPlaceContext;)Lnet/minecraft/world/level/block/state/BlockState;",
+        "createBlockStateDefinition": "Lcom/simibubi/create/content/processing/burner/BlazeBurnerBlock;m_7926_(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V",
+        "Lnet/minecraft/world/level/block/state/StateDefinition$Builder;add([Lnet/minecraft/world/level/block/state/properties/Property;)Lnet/minecraft/world/level/block/state/StateDefinition$Builder;": "Lnet/minecraft/world/level/block/state/StateDefinition$Builder;m_61104_([Lnet/minecraft/world/level/block/state/properties/Property;)Lnet/minecraft/world/level/block/state/StateDefinition$Builder;"
+      }
+    }
+  }
+}

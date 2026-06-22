@@ -194,7 +194,7 @@ dependencies {
 
     implementation fg.deobf("curse.maven:create-molten-vents-824654:5980547")
 
-    implementation fg.deobf("curse.maven:copycats-968398:6650089")
+    implementation fg.deobf("curse.maven:copycats-968398:7634682")
 
     // compile against the JEI API but do not include it at runtime
 //    compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}"))
